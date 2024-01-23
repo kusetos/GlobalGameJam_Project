@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CollisionTest : MonoBehaviour
 {
+    [SerializeField] private float _damage = 10f;
+    private PlayerHealth _health;
+
     private void Start()
     {
         Debug.Log("sdfsdf");
@@ -12,7 +15,12 @@ public class CollisionTest : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
+        {
             Debug.Log("Player Triggered");
+
+            
+
+        }
         //Start action
         //noise/music, laugh
     }
@@ -21,7 +29,9 @@ public class CollisionTest : MonoBehaviour
     {
         if (other.tag == "Player")
             Debug.Log("give damage");
-            //give damage per time.    
+            other.GetComponent<PlayerHealth>().ReduseDamage(_damage * Time.deltaTime);
+
+        //give damage per time.    
     }
 
     private void OnTriggerExit(Collider other)
