@@ -19,6 +19,8 @@ public class RatMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_targets!= null)
+        {
         if(Vector3.Distance(transform.position, _targets[index].transform.position) <= 0.001f)
         {
             index++;
@@ -32,6 +34,8 @@ public class RatMovement : MonoBehaviour
         
 
         transform.position = Vector3.MoveTowards(transform.position, _targets[index].transform.position, _speed * Time.deltaTime);
+
+        }
 
         
     }
