@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("")]
     [SerializeField] private HealthBar _healthBar;
+    private bool _isHealing = false;
 
     private void Start()
     {
@@ -19,31 +20,36 @@ public class PlayerHealth : MonoBehaviour
         
         _currentHealth = 0;
     }
-    
+
+    private void Update()
+    {
+        if (!_isHealing)
+        {
+            ReduseDamage(_damage * Time.deltaTime);
+        }
+
+            
+    }
+     
+    public void SetIsHealing(bool isHealing)
+    {
+        _isHealing = isHealing;
+    }
     public void HealPlayer(float heal)
     {
         if(_currentHealth >= 0)
         {
-        _currentHealth -= heal;
-        _healthBar.SetHealth(_currentHealth);
+            _currentHealth -= heal;
+            _healthBar.SetHealth(_currentHealth);
         }
     }    
     public void ReduseDamage(float damage)
     {
         if(_currentHealth <= 100.0f)
         {
-        _currentHealth += damage;
-        _healthBar.SetHealth(_currentHealth);
+            _currentHealth += damage;
+            _healthBar.SetHealth(_currentHealth);
         }
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.F))
-        {
-            HealPlayer(25f);
-        }
-        ReduseDamage(_damage * Time.deltaTime);
-        
-    }
 }

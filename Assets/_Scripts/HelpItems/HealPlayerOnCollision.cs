@@ -19,6 +19,7 @@ public class HealPlayerOnCollision : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("Player Triggered");
+            other.GetComponent<PlayerHealth>().SetIsHealing(true);
 
             
 
@@ -30,29 +31,32 @@ public class HealPlayerOnCollision : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (_maxHealTime <= 0f)
+        if (other.tag == "Player")
         {
-            if (other.tag == "Player")
+
+            if (_maxHealTime >= 0f)
             {
                 Debug.Log("give damage");
                 other.GetComponent<PlayerHealth>().HealPlayer(_healSpeed * Time.deltaTime);
                 _maxHealTime -= Time.deltaTime;
             }
-
+            else
+            {
+                Destroy(this.gameObject, 1f);
+            }
         }
-        else
-        {
-            Destroy(other.gameObject, 1f);
-        }
-
-
         //give damage per time.                                 ;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
+        {
             Debug.Log("Trigger ended!!!");
-            //stop noise, laugh quiter
+            other.GetComponent<PlayerHealth>().SetIsHealing(false);
+            //other.GetComponent<PlayerHealth>().ChangeHealState(HealState.DAMAGING);
+
+        }
+        //stop noise, laugh quiter
     }
 }
