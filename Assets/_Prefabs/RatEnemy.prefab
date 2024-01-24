@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 4288603209773729191}
   - component: {fileID: 5206631891302185455}
   - component: {fileID: 2249697164744162587}
-  - component: {fileID: 4858730076484965952}
   m_Layer: 0
   m_Name: RatEnemy
   m_TagString: Enemy
@@ -280,17 +279,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
---- !u!114 &4858730076484965952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8017070301916043744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254ff4379bf226f46bb7207c837e149b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targets: []
-  _speed: 0

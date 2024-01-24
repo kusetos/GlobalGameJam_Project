@@ -332,7 +332,7 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #endregion
-
+                              
         #region Crouch
 
         if (enableCrouch)

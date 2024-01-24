@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionTest : MonoBehaviour
+public class HealPlayerOnCollision : MonoBehaviour
 {
     [SerializeField] private float _damage = 10f;
     private PlayerHealth _health;
@@ -29,7 +29,7 @@ public class CollisionTest : MonoBehaviour
     {
         if (other.tag == "Player")
             Debug.Log("give damage");
-            other.GetComponent<PlayerHealth>().ReduseDamage(_damage * Time.deltaTime);
+            other.GetComponent<PlayerHealth>().HealDamage(_damage * Time.deltaTime);
 
         //give damage per time.    
     }

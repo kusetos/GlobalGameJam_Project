@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2249697164744162587}
   - component: {fileID: 2423812641587433243}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: HealUpElement
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
