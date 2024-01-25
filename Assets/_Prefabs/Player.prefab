@@ -536,7 +536,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6232599158174864918}
   - component: {fileID: 3266004629177503091}
-  - component: {fileID: 6857461525076749561}
   m_Layer: 0
   m_Name: pickUpCamera
   m_TagString: MainCamera
@@ -613,14 +612,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6857461525076749561
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100222236174174065}
-  m_Enabled: 1
 --- !u!1 &4318484626757452044
 GameObject:
   m_ObjectHideFlags: 0

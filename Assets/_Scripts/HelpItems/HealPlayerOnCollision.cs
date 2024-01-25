@@ -11,7 +11,7 @@ public class HealPlayerOnCollision : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("sdfsdf");
+        //Debug.Log("sdfsdf");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +24,7 @@ public class HealPlayerOnCollision : MonoBehaviour
             
 
         }
-        //Start action
-        //noise/music, laugh
+
     }
 
     private void OnTriggerStay(Collider other)
