@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
 
     [Header("Player Stats")]
-    [SerializeField] private float _maxHealth = 100f;
+    [SerializeField] private float _maxHealth = 101f;
     [SerializeField] private float _damage = 1f;
     private float _currentHealth;
 
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     private bool firstStage = false;
     private bool secondStage = false;
     private bool thirdStage = false;
+    private bool lastStage = false;
 
     private float stageTimer;
 
@@ -41,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         {
             case SoundState.BOY:
                 _audioManager.Play("BoyLaugh");
-                thirdStage = true;
+                lastStage = true;
                 stageTimer = 0f;
                 break;
             case SoundState.MANIAC:
@@ -88,11 +90,6 @@ public class PlayerHealth : MonoBehaviour
             //realistic -> man
             if(stageTimer == 0)
             {
-                changeSoundState(SoundState.MAN);
-            }
-            stageTimer += Time.deltaTime;
-            if(stageTimer >= 5f)
-            {
                 changeSoundState(SoundState.REALISTIC);
             }
 
@@ -103,14 +100,24 @@ public class PlayerHealth : MonoBehaviour
         {
             if(stageTimer == 0)
             {
-                changeSoundState(SoundState.LONG);
+                changeSoundState(SoundState.STUPID);
             }
             stageTimer += Time.deltaTime;
-            if( stageTimer >= 10f)
+            if (stageTimer >= 20f)
             {
-                changeSoundState (SoundState.BOY);
+                changeSoundState(SoundState.REALISTIC);
             }
+        }
 
+        if (_currentHealth >= 90 && lastStage == false)
+        {
+            changeSoundState(SoundState.BOY);
+        }
+
+        if(_currentHealth >= _maxHealth - 1f)
+        {
+            changeSoundState(SoundState.SCREAM);
+            //Restart LEVEL;
         }
 
 
@@ -136,11 +143,14 @@ public class PlayerHealth : MonoBehaviour
             _healthBar.SetHealth(_currentHealth);
 
             if (_currentHealth <= 5) firstStage = false;
+            if (_currentHealth <= 20) secondStage = false;
+            if(_currentHealth <= 45) thirdStage = false;
+            if(_currentHealth <= 85) lastStage = false;
         }
     }    
     public void ReduseDamage(float damage)
     {
-        if(_currentHealth <= 100.0f)
+        if(_currentHealth <= _maxHealth)
         {
             _currentHealth += damage;
             _healthBar.SetHealth(_currentHealth);
