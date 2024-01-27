@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("")]
     [SerializeField] private HealthBar _healthBar;
+    [SerializeField] private GameObject _sFader;
     private bool _isHealing = false;
 
     private AudioManager _audioManager;
@@ -117,6 +120,10 @@ public class PlayerHealth : MonoBehaviour
         if(_currentHealth >= _maxHealth - 1f)
         {
             changeSoundState(SoundState.SCREAM);
+            _sFader.SetActive(true);
+            stageTimer += Time.deltaTime;
+            if(stageTimer >= 1.3f)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             //Restart LEVEL;
         }
 
