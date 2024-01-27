@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - canPickUp
+  - Door
   layers:
   - Default
   - TransparentFX
