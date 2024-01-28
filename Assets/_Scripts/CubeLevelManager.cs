@@ -15,7 +15,7 @@ public static class CubeLevelManager
         if( _filledTiles == 6)
         {
             Debug.Log("LEVEL PASSED");
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 

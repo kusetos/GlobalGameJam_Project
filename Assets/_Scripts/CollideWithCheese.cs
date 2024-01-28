@@ -8,6 +8,6 @@ public class CollideWithCheese : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("EZ Maze");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

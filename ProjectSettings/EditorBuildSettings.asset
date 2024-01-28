@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e18c96f1824943b40b1ad053e8566d57
+  - enabled: 1
     path: Assets/Scenes/Level_1_SoftRoom.unity
     guid: 38456a31e390000478707a20e4c7e851
   - enabled: 1
@@ -17,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_4_Doors.unity
     guid: 3f4cc7779d48a2345b4051654e546a92
+  - enabled: 1
+    path: Assets/Scenes/Environment.unity
+    guid: c732593fe76e5a84197f9cd13963f706
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: cd0165165965b194fb0114ea5fd5efa9
   m_configObjects: {}

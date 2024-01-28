@@ -10,7 +10,7 @@ public class FourthLevelTraveler : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             print("3d level");
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -29,9 +30,19 @@ public class Door : MonoBehaviour
                 
                 if(Input.GetKeyDown(KeyCode.E))
                 {
+                    if (hit.collider.gameObject.name == "ColliderCar")
+                    {
+                        Invoke("TheEnd", 0.5f);
+                        return;
+                    }
+
                     door.GetComponent<Animator>().enabled = true;
                     door.GetComponent<AudioSource>().enabled = true;
 
+                    if (hit.collider.gameObject.name == "DoorExit")
+                    {
+                        Invoke("ExitScene", 1f);
+                    }
                 }
             }
             else
@@ -43,9 +54,18 @@ public class Door : MonoBehaviour
         {
             interactionText.SetActive(false);
         }
-
-
     }
+
+    private void ExitScene()
+    {
+        SceneManager.LoadScene(5);
+    }
+
+    private void TheEnd()
+    {
+        SceneManager.LoadScene(6);
+    }
+
 
     //public void Open(Vectro3 )
 
