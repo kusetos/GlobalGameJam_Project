@@ -75755,7 +75755,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: RealisticLaugh
     Clip: {fileID: 8300000, guid: 79c9de8e87c030b46ba74c3bbf8829eb, type: 3}
-    Volume: 0.0125
+    Volume: 0.22
     Pitch: 1
     Loop: 0
     source: {fileID: 0}
@@ -75767,13 +75767,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: StupidLaugh
     Clip: {fileID: 8300000, guid: 2e1458d973aa02d4e997f0268a28f7cb, type: 3}
-    Volume: 0.00625
+    Volume: 0.347
     Pitch: 1
     Loop: 0
     source: {fileID: 0}
   - Name: ManLaugh
     Clip: {fileID: 8300000, guid: 6411c6b53230e3842905ec7894636e90, type: 3}
-    Volume: 0.0125
+    Volume: 0.271
     Pitch: 1
     Loop: 0
     source: {fileID: 0}

@@ -24180,7 +24180,7 @@ Transform:
   m_GameObject: {fileID: 905004542}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.69550323, y: 0.029999925, z: -354.58014}
+  m_LocalPosition: {x: 0.69550323, y: -0.048, z: -354.58014}
   m_LocalScale: {x: 0.06600001, y: 0.13200001, z: 6.600001}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -51623,7 +51623,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: RealisticLaugh
     Clip: {fileID: 8300000, guid: 79c9de8e87c030b46ba74c3bbf8829eb, type: 3}
-    Volume: 0.0125
+    Volume: 0.161
     Pitch: 1
     Loop: 0
     source: {fileID: 0}
@@ -51635,13 +51635,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - Name: StupidLaugh
     Clip: {fileID: 8300000, guid: 2e1458d973aa02d4e997f0268a28f7cb, type: 3}
-    Volume: 0.00625
+    Volume: 0.237
     Pitch: 1
     Loop: 0
     source: {fileID: 0}
   - Name: ManLaugh
     Clip: {fileID: 8300000, guid: 6411c6b53230e3842905ec7894636e90, type: 3}
-    Volume: 0.0125
+    Volume: 0.263
     Pitch: 1
     Loop: 0
     source: {fileID: 0}
@@ -57217,6 +57217,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 354860456}
     m_Modifications:
+    - target: {fileID: 1518513177655336406, guid: aeaa0666583c40846bb5007a4d079b27, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.004
+      objectReference: {fileID: 0}
     - target: {fileID: 5701687972171445923, guid: aeaa0666583c40846bb5007a4d079b27, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.445421
@@ -57263,7 +57267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131637475315849491, guid: aeaa0666583c40846bb5007a4d079b27, type: 3}
       propertyPath: m_text
-      value: Time to test your physical abilities!
+      value: "Time to test your physical abilities!\n\tUSE SHIFT TO JUMP HIGHER"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

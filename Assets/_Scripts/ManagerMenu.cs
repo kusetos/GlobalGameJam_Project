@@ -10,6 +10,11 @@ public class ManagerMenu : MonoBehaviour
     public void ExitToGame() => Application.Quit();
 
 
+    public void Start()
+    {
+        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void LoadLevel(int index)
     {
         StartCoroutine(LoadLevelNext(index));
